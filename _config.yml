@@ -1,0 +1,101 @@
+markdown: kramdown
+
+plugins:
+  - jekyll-seo-tag
+
+# Permalinks
+#
+# Use of `relative_permalinks` ensures post links from the index work properly.
+permalink:           pretty
+#relative_permalinks: true
+
+# Setup
+title:               FLR - Books
+tagline:             Free books collected from the internet
+parent_url:          https://downloadnow.github.io
+footer:              downloadnow/books
+# paginate:            5
+baseurl:             /
+
+# plugins: [jekyll-paginate]
+
+excerpt_separator:   <!--more-->
+
+prose:
+  siteurl: 'https://downloadnow.github.io/books'
+  media: 'media'
+  ignore:
+    - /downloads
+    - /public
+    - /tags
+    - /media
+    - /.sass-cache
+    - /.gitignore
+    - /404.html
+    - /LICENSE*
+    - /atom.xml
+  metadata:
+      _posts:
+        - name: "title"
+          field:
+            element: "text"
+            label: "Title"
+            value: ""
+        - name: "layout"
+          field:
+            element: "hidden"
+            value: "post"
+        - name: "ads"
+          field:
+            element: "checkbox"
+            label: "Advertising"
+            value: "true"
+        - name: "comments"
+          field:
+            element: "checkbox"
+            label: "Comments"
+            value: "true"
+
+
+# Assets
+#
+# We specify the directory for Jekyll so we can use @imports.
+sass:
+  sass_dir:          _sass
+  style:            :compressed
+
+# About/contact
+author:
+  name:              downloadnow
+  email:             downloadnowzzzz@gmail.com
+
+# Custom vars
+version:             2.0.0
+github:
+  repo:              https://github.com/downloadnow/books
+
+# specific configurations
+db:
+  comments:
+    provider: disqus
+    disqus:
+      short_name: downloadnow
+
+  ads:
+    provider: adsense
+
+  # analytics:
+  #   provider: google
+  #   google:
+  #     tracking_id: 'UA-87741523-1'
+
+pages_list:
+  About: 'about'
+  Temp: 'temp'
+  Archive: 'archive'
+  Feed: 'atom.xml'
+
+categories_list:
+  category1: category1-cat
+  category2: category2-cat
+  category3: category3-cat

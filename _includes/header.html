@@ -1,0 +1,43 @@
+<script>
+function toggleNav() {
+    /* responsive top navigation bar */
+    var topNav = document.getElementById("top-nav");
+    if ($(topNav).hasClass("responsive")) {
+      $(topNav).removeClass("responsive");
+    }
+    else {
+      $(topNav).addClass("responsive");
+    }
+}
+</script>
+
+<header class="header clearfix ">
+    <span id="logo">
+      <!-- <h4><a href="{{ site.baseurl }}/" title="Home">{{ site.title | upcase }}</a></h4> -->
+      <h4><a href="{{ "/" | relative_url }}" title="Home">{{ site.title | upcase }}</a></h4>
+      <span>{{ site.tagline }}</span>
+    </span>
+    <span id="parent">
+      <h5><a href="{{ site.parent_url }}/" title="downloadnow">&uArr;&uArr; downloadnow</a></h5>
+    </span>
+    <nav id="top-nav">
+      <a id="icon" href="javascript:void(0);" onclick="toggleNav()">☰</a>
+      <span id="site-meta">
+        {% for page in site.pages_list %}
+          {% if page[0] contains "About" %}
+            <small><a href="{{ site.parent_url }}/{{ page[1]  }}">{{ page[0] | upcase }}</a></small>
+          {% else %}
+            <!-- <small><a href="{{ site.baseurl }}/{{ page[1]  }}">{{ page[0] | upcase }}</a></small> -->
+            <small><a href="{{ page[1] | relative_url }}">{{ page[0] | upcase }}</a></small>
+          {% endif %}
+        {% endfor %}
+      </span>
+      <span id="category">
+        {% assign categories = site.categories_list %}
+        {% for cat in categories %}
+            <!-- <small><a href="{{ site.baseurl }}/{{ cat[1] }}">&raquo;{{ cat[0] | capitalize }}</a></small> -->
+            <small><a href="{{ cat[1] | relative_url }}">&raquo;{{ cat[0] | capitalize }}</a></small>
+        {% endfor %}
+      </span>
+    </nav>
+</header>

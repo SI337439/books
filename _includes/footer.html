@@ -1,0 +1,7 @@
+<footer class="footer">
+  <!-- <h4><a href="{{ site.baseurl }}/" title="Home">{{ site.footer }}</a></h4> -->
+  <h4><a href="{{ "/" | relative_url }}" title="Home">{{ site.footer }}</a></h4>
+  <small>
+    &copy; <time datetime="{{ site.time | date_to_xmlschema }}">{{ site.time | date: '%Y' }}</time> {{ site.author.name }}'s blog. All rights reserved.
+  </small>
+</footer>
